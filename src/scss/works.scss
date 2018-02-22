@@ -1,0 +1,65 @@
+
+#works {
+  text-align:center;
+  margin:100px 0;
+  h2{margin-bottom:50px};
+  .workContain {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content:center;
+    position: relative;
+    .example {
+      width:30vw;
+      height: 23vw;
+      max-width:384px;
+      max-height: 294px;
+      text-align: center;
+      transition: all 0.6s ease-out;
+      clip-path: polygon( 0 0, 0 0, 100% 0, 100% 0, 50% 100%);
+      //filter: grayscale(1);
+
+      position:relative;
+      &:nth-of-type(1) {
+        background: url("http://dev.elijahvazquez.com/imgs/medalofhonor.jpg") top center no-repeat;
+        background-size:cover;
+        position: relative;
+      }
+      &:nth-of-type(2) {
+        background: url("http://dev.elijahvazquez.com/imgs/prose.jpg") top center no-repeat;
+        background-size:200%;
+        clip-path: polygon(0 100%, 0 100%, 100% 100%, 100% 100%, 50% 0);
+        h3{
+          top:40%;
+        }
+      }
+      &:nth-of-type(3) {
+        background: url("http://dev.elijahvazquez.com/imgs/liveup.jpg") top center no-repeat;
+        background-size:cover;
+      }
+      h3 {
+        color: white;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.75);
+      }
+      &:hover {
+        clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%, 50% 100%);
+        // filter: grayscale(0);
+        width: 50vw;
+        max-width: 640px;
+        background-size: 100%;
+        &:nth-of-type(2) {
+          clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0, 50% 0);
+        }
+        &:before {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+#about{
+	display:flex;
+	padding:60px 20px;
+	@media all and(min-width:640px){
+		padding:120px 20px;
+	}
+	
+	align-items:center;
+	justify-content:space-around;
+	.aboutImg{
+		text-align:center;
+		img{
+			width:100%;
+			max-width:200px;
+			@media all and (min-width:640px){
+				max-width:316px;
+			}
+			// background: linear-gradient(90deg, $red 10%, $orange 100%);
+			// clip-path: polygon(0 50%, 100% 0, 100% 100%);
+		}
+	}
+	.aboutCopy{
+		width:100%;
+		position:relative;
+		@media all and (min-width:640px){
+			width:auto;
+			padding:0 20px 0 0;
+		}
+		h1{
+			margin-bottom:1rem;
+			font-size:3.052em;
+		}
+		p{
+			width:100%;
+			max-width:$textWidth;
+		}
+		a{
+			float:right;
+		}
+	}
+}

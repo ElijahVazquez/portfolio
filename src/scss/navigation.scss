@@ -1,0 +1,109 @@
+header{
+	//box-shadow:0 1px 3px 0 rgba(0,0,0,.3);
+	.navContain{
+		width:100%;
+		max-width:1280px;
+		margin:0 auto;
+		padding:15px 20px;
+		display:flex;
+		justify-content:space-between;
+		align-items:flex-end;
+		.triContain{
+			position:relative;
+			z-index:100;
+			cursor:pointer;
+			height:44px;
+			img{
+				width:50px;
+				opacity:1;
+				transition:all .3s ease-out;
+			}
+		}
+		.menu{
+		  position:absolute;
+		  width:20px;
+		  height:5px;
+		  background:black;
+		  top:28px;
+		  left:10px;
+		  cursor:pointer;
+		    &:before,&:after{
+		      content:"";
+		      width:30px;
+		      height:5px;
+		      background:black;
+		      position:absolute;
+		      left:0;
+		      transition:all .3s ease-out;
+		      cursor:pointer;
+		    }
+		    &:before{top:-10px;}
+		    &:after{bottom:-10px;}
+		  transition:all .3s ease-out;
+		  &.active{
+		    background:rgba(0,0,0,0);
+		    &:before{
+		      transform:rotate(45deg);
+		      top:0;
+		    }
+		    &:after{
+		      transform:rotate(-45deg);
+		      bottom:0;
+		    }
+		  }
+		}
+		&.active{
+			.triContain img{
+				opacity:0;
+			}
+	    .drawer{
+	      left:0;
+	      border-top:10vh solid transparent;
+	      border-bottom:90vh solid transparent;
+	      transition:border .3s ease-out .3s, left .3s ease-out;
+	      ul{
+	        left:20px;
+	      }
+	    }
+		}
+	  .drawer{
+	    position:fixed;
+	    width:0;
+	    height:0;
+	    top:0;
+	    left:-300px;
+	    border-left:300px solid #FF6000;
+	    border-top:0 solid transparent;
+	    border-bottom:100vh solid transparent;
+	    transition:border .3s ease-out,left .3s ease-out .3s;
+	    z-index: 99;
+	    ul{
+	    	font-family: 'Raleway', sans-serif;
+	      position:fixed;
+	      left:-280px;
+	      top:140px;
+	      margin:0;padding:0;
+	      list-style-type:none;
+	      transition: all .3s;
+	      li{
+	        margin-bottom:10px;
+	        a{
+	          text-decoration:none;
+	          color:white;
+	          letter-spacing:2px;
+	          text-transform:uppercase;
+	        }
+	      }
+	    }
+	  }
+	  .name{
+	  	a{
+	  		font-family: 'Raleway', sans-serif;
+	  		text-decoration:none;
+	  		color:$black;
+	  		margin:0;
+
+	  	}
+	  }
+	}
+}

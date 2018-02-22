@@ -1,0 +1,1 @@
+}); //end of js file (closing the doc.ready fn)

@@ -1,0 +1,157 @@
+/* reset */
+/* http://meyerweb.com/eric/tools/css/reset/ | v2.0 | 20110126 License: none (public domain) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}body {line-height: 1;}ol, ul {list-style: none;}blockquote, q {quotes: none;}blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}table {border-collapse: collapse;border-spacing: 0;}
+/*---------- FONT STYLES ----------*/
+html {
+	font-size: .75em;
+	@media all and (min-width:640px){
+		font-size:1em;
+	}
+}
+body{
+	font-family: Georgia, serif;
+	font-smoothing: antialiased;
+	background-color: white;
+  font-weight: 500;
+  line-height: 1.45;
+  color:$grey;
+  *{
+  	box-sizing:border-box;
+  }
+}
+.headings {
+	//color:$black;
+  margin: 1.414em 0 0.5em;
+  font-weight: inherit;
+  line-height: 1.2;
+  font-family: 'Raleway', sans-serif;
+  text-transform:uppercase;
+  font-weight:700;
+}
+.heading1{
+	@extend .headings;
+	margin-top: 0;
+	font-size: 1.953em;
+}
+.heading2{
+	@extend .headings;
+	font-size: 1.563em;
+}
+.heading3{
+	@extend .headings;
+	font-size: 1.25em;
+}
+.heading4{
+	@extend .headings;
+	font-size: 1em;
+}
+.paragraph{
+	margin-bottom: 1.3em;
+}
+.hyperlink{
+	color:$grey;
+	text-decoration: underline;
+	transition:color .3s ease-out;
+	&:visited{
+		color:$grey;
+	}
+	&:hover,&:active,&:focus{
+		color:$orange;
+	}
+}
+
+h1{@extend .heading1;}
+h2{@extend .heading2;}
+h3{@extend .heading3;}
+h4{@extend .heading4;}
+p{@extend .paragraph;}
+a{@extend .hyperlink;}
+ul {list-style-type: square;}
+.small{font-size: .8em;	font-weight: 400;}
+.caps{text-transform: uppercase !important;}
+.bold,strong,b{font-weight:900;}
+
+.back{
+	position:relative;
+	&:before{
+		content:"";
+		position:absolute;
+		width:8px;
+		height:8px;
+		left:-15px;
+		top:7px;
+		border-left:1px solid $black;
+		border-bottom:1px solid $black;
+		transform:rotate(45deg);
+	}
+}
+// text color
+.txt-grey{color:$grey;}
+.txt-white{color:$white;}
+.txt-midGrey{color:$midGrey;}
+.txt-lightGrey{color:$lightGrey;}
+.txt-orange{color:$orange;}
+.txt-black{color:$black;}
+.txt-red{color:$red;}
+
+
+/*---------- BUTTON STYLES ----------*/
+button,.btn{
+	display:inline-block;
+	text-align:center;
+	background:$orange;
+	color:$white;
+	text-transform:capitalize;
+	font-size:21px;
+	padding:10px 20px;
+	width:auto;
+	min-width:200px;
+	text-decoration:none;
+	border-radius: 5px;
+	border:1px solid $orange;
+	transition: all .3s ease-out;
+	position: relative;
+	&:before{
+		content:"";
+		position: absolute;
+		top:0;
+		left:0;
+		opacity:0;
+		width:100%;
+		height:100%;
+		background:linear-gradient(-120deg, transparent, $orange);
+	}
+	&:hover{
+		color: white;
+		background:$red;
+		border:1px solid $red;
+		text-decoration:none;
+	}
+	&:focus{
+		color:white;
+	}
+	&:visited{
+		color:white;
+		text-decoration:none;
+	}
+	&.white{
+		color:$orange;
+		background-color:$white;
+		&:hover{
+			color:$red;
+		}
+		&:visited{
+			color:$orange;
+		}
+	}
+}
+
+/*---------- GENERAL STYLES ----------*/
+ul{
+	list-style-type:none;
+}
+#siteContainer{
+	width:100%;
+	max-width:1280px;
+	margin:0 auto;
+}
