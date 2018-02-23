@@ -1,6 +1,7 @@
 
 $('body').on('touch click','.triContain',function(){
 	$(".menu").toggleClass('active').parents('.navContain').toggleClass('active');
+	$('body').toggleClass('fixed');
 });
 
 $("body").on("touch click",".expand",function(e){

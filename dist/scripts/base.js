@@ -64,6 +64,7 @@ $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function (event) {
 
 $('body').on('touch click','.triContain',function(){
 	$(".menu").toggleClass('active').parents('.navContain').toggleClass('active');
+	$('body').toggleClass('fixed');
 });
 
 $("body").on("touch click",".expand",function(e){
